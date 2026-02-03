@@ -1,0 +1,169 @@
+:root {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+
+  --ff-body: "Montserrat", sans-serif;
+  --ff-title: "Fraunces", serif;
+
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--ff-body);
+  line-height: 1.6;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.card-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+}
+
+.card__media {
+  width: 100%;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.card__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.card__title {
+  font-family: var(--ff-title);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.card__desc {
+  font-size: 14px;
+  color: var(--grey);
+  line-height: 1.65;
+}
+
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.card__price {
+  font-family: var(--ff-title);
+  font-size: 32px;
+  line-height: 1;
+  color: var(--green-500);
+}
+
+.card__price--old {
+  color: var(--grey);
+  font-size: 13px;
+}
+
+.card__btn {
+  width: 100%;
+  margin-top: 6px;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--green-500);
+  color: var(--white);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background: var(--green-700);
+}
+
+.card__btn:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 3px;
+}
+
+.card__btn-icon img {
+  width: 15px;
+  height: 16px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--grey);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 641px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__content {
+    padding: 32px;
+    gap: 16px;
+  }
+}
